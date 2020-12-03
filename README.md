@@ -12,7 +12,7 @@
 
 ### Step 3: Add insecure registry lists
 
-By default docker uses secured HTTP or HTTP. Since we are running this registry locally so there can be exceptions to tell docker about it. So open the file **/etc/docker/daemon.json** (if not exists then create it please!) and add the following json:
+By default docker uses secured HTTP or HTTPS. Since we are running this registry locally so there can be exceptions to tell docker about it. So open the file **/etc/docker/daemon.json** (if not exists then create it please!) and add the following json:
 
 ```sh
     {
