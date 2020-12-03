@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    docker-registry:
+        container_name: your-local-docker-registry
+        image: registry:latest
+        ports:
+            - 25000:5000
+        restart: always
+        volumes:
+            - /your/local/volume_for/docker_registry:/var/lib/registry
+    docker-registry-ui:
+        container_name: your-local-docker-registry-ui
+        image: konradkleine/docker-registry-frontend:v2
+        ports:
+            - 25001:80
+        environment:
+            ENV_DOCKER_REGISTRY_HOST: your-local-docker-registry
+            ENV_DOCKER_REGISTRY_PORT: 5000
+
